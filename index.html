@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday 💙</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== BACKGROUND FLOATING ===== */
+.floating-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.float-item {
+  position: absolute;
+  bottom: -150px;
+  width: 80px;
+  opacity: 0.8;
+  animation: floatUp linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-120vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+section, .hero {
+  position: relative;
+  z-index: 2;
+}
+body{margin:0;font-family:'Poppins',sans-serif;background:#cfeeff;overflow-x:hidden}
+section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(50px);transition:all 1s ease}
+section.show{opacity:1;transform:translateY(0)}
+h1,h2,p{color:#4bb6e5}
+
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(#dff6ff,#ffffff);opacity:1;transform:none}
+.gift{width:150px;cursor:pointer;transition:.6s;position: relative; z-index: 10;}
+.open{transform:scale(1.2) rotate(10deg)}
+
+.particle{position:fixed;width:8px;height:8px;background:white;border-radius:50%;opacity:.7;animation:floatUp 6s linear infinite}
+
+.grid{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.card{background:white;border-radius:20px;padding:15px;width:250px;box-shadow:0 10px 20px rgba(0,0,0,.1);transform:scale(.8);opacity:0;transition:.6s}
+.card.show{transform:scale(1);opacity:1}
+.card img{width:100%;border-radius:15px}
+.title{font-weight:600;margin-top:10px}
+.desc{font-size:14px;color:#666}
+
+.slider{display:flex;gap:20px;overflow:auto;scroll-snap-type:x mandatory;padding:20px}
+.slide{min-width:250px;scroll-snap-align:center;transform:scale(.9);transition:.5s}
+.slide:hover{transform:scale(1)}
+
+.footer{background:#dff6ff;border-radius:30px;padding:40px;transform:scale(.6);opacity:0;transition:all 1.5s cubic-bezier(.22,1,.36,1)}
+.footer.show{transform:scale(1.05);opacity:1}
+.footer.final{transform:scale(1)}
+.big{font-size:18px;font-weight:500;margin-top:20px;opacity:0;transform:translateY(20px);transition:1s}
+.big.show{opacity:1;transform:translateY(0)}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* paksa 3 kolom */
+  gap: 20px;
+  padding: 20px;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 20px;
+  background: white;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.float-item {
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+}
+</style>
+</head>
+
+<body>
+<div class="floating-bg"></div>
+
+<section class="hero">
+<h1>Happy Birthday 💙</h1>
+<p>Ada sesuatu spesial buat kamu hari ini...</p>
+<img src="gift.png" class="gift" id="startBtn">
+</section>
+
+<section id="dia">
+<h2>01 Hari ini, semua tentang kamu ✨</h2>
+<div class="grid">
+<div class="card"><img src="dia1.jpeg"><div class="title">Cantik 💖</div><div class="desc">Kecantikanmu bukan cuma dari luar, tapi dari dalam kamu juga ada keindahan</div></div>
+<div class="card"><img src="dia2.jpeg"><div class="title">Berprestasi 🏆</div><div class="desc">Kamu selalu berusaha, totalitas, rajin, dan penuh semangat</div></div>
+<div class="card"><img src="dia3.jpeg"><div class="title">Lembut Hati 🌷</div><div class="desc">Kamu juga pribadi yang sangat baik, ramah, juga lemah lebut</div></div>
+</div>
+</section>
+
+<section id="kita">
+<h2>02 Dan aku bersyukur, kita bertemu 💙</h2>
+<div class="gallery">
+  <div class="photo"><img src="kita1.jpeg"></div>
+  <div class="photo"><img src="kita2.jpeg"></div>
+  <div class="photo"><img src="kita3.jpeg"></div>
+</div>
+</section>
+
+<section id="end">
+<div class="footer">
+<h2>03 Selamat Ulang Tahun 🎂</h2>
+<p style="margin-top:15px; line-height:1.6">
+Selamat ulang tahun yang ke-18 yaa kakk 💙<br><br>
+Semoga di tahun ini dan seterusnya menjadi tahun-tahun terbaik kamu ✨<br>
+Semua doa-doamu terkabul, dan kebahagiaan selalu menemanimu 🌷<br><br>
+Sukses selalu yaa, jangan pernah putus asa 💪<br>
+Dan tetap menjadi Atma yang baik hati, ramah, dan periang 😊
+</p>
+<div class="big">Happy Birthday to Sweetest Girl Ever 💙</div>
+</div>
+</div>  
+</section>
+<audio id="music" loop>
+  <source src="goldenhour.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// pastikan semua DOM sudah siap
+window.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('startBtn');
+    btn.addEventListener('click', start);
+});
+
+function start(){
+
+// 🎵 PLAY MUSIC
+let music = document.getElementById('music');
+music.volume = 0; // mulai dari 0 (silent)
+music.play().catch(()=>{});
+
+// naikkan volume pelan-pelan
+let vol = 0;
+let fade = setInterval(() => {
+  if (vol < 0.5) {
+    vol += 0.02;
+    music.volume = Math.min(vol, 1);
+  } else {
+    clearInterval(fade);
+  }
+}, 200);
+
+// 🌈 FLOATING BACKGROUND (CINNA + FOTO)
+const bg = document.querySelector('.floating-bg');
+
+setInterval(() => {
+  let item = document.createElement('img');
+  item.className = 'float-item';
+
+  const images = [
+    'cinnamoroll.png',
+    'dia1.jpeg',
+    'cinnamoroll.png',
+    'cinnamoroll.png'
+  ];
+
+  item.src = images[Math.floor(Math.random() * images.length)];
+
+  item.style.left = Math.random() * 100 + 'vw';
+  item.style.width = (60 + Math.random() * 60) + 'px';
+  item.style.animationDuration = (5 + Math.random() * 5) + 's';
+
+  bg.appendChild(item);
+
+  setTimeout(() => item.remove(), 10000);
+
+}, 400);
+
+let hero=document.querySelector('.hero');
+hero.querySelector('.gift').classList.add('open');
+
+setInterval(()=>{
+let p=document.createElement('div');
+p.className='particle';
+p.style.left=Math.random()*100+'vw';
+document.body.appendChild(p);
+setTimeout(()=>p.remove(),6000);
+},200);
+
+setTimeout(()=>{
+hero.style.display='none';
+showSection('dia',()=>{
+showCards();
+showSection('kita',()=>{
+showSection('end',()=>{
+    let footer = document.querySelector('.footer');
+    footer.classList.add('show');
+
+    setTimeout(()=>{
+        footer.classList.add('final');
+    },800);
+
+    setTimeout(()=>{
+        document.querySelector('.big').classList.add('show');
+    },1200);
+});
+});
+});
+},800);
+}
+
+function showSection(id,callback){
+let el=document.getElementById(id);
+el.classList.add('show');
+setTimeout(()=>{
+    if(callback) callback();
+},1200);
+}
+
+function showCards(){
+let cards=document.querySelectorAll('.card');
+cards.forEach((card,i)=>{
+setTimeout(()=>card.classList.add('show'),i*400);
+});
+}
+
+</script>
+
+</body>
+</html>
